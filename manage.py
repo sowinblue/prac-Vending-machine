@@ -59,5 +59,16 @@ class pro_manage():
 
 
 
-    
+    def money_slot(money):
+        coin_allowed = [100,500]
+        paper_allowed = [1000,5000,10000]
+        total= 0
+        
+        for m in money:
+            if m in coin_allowed or m in paper_allowed:
+                total = total + m
+            else:
+                print(f"{m}원은 사용할 수 없어")
+
+        return total 
 
