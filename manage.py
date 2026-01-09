@@ -9,9 +9,11 @@ class pro_manage():
         box = range(5)
         for i in box:
             product = input("제품 명을 입력: ")
-            self.menu[i+1] = product
-        
-        return self.menu
+            price = int(input("가격 입력: "))
+            self.menu[i+1] = {
+            "name": product,
+            "price": price
+        }
 
 
 
@@ -22,5 +24,15 @@ class pro_manage():
         self.menu[number] = new_product
         
 
+    #확인 전용
     def show_menu(self):
         print(self.menu)
+
+
+    # 조회 전용
+    def get_menu(self):
+        return self.menu
+
+
+    def pro_select():
+        print
