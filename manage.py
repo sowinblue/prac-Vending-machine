@@ -9,7 +9,6 @@ class pro_manage():
         box = range(5)
         for i in box:
             product = input("제품 명을 입력: ")
-
             self.menu[i+1] = product
         
         return self.menu
