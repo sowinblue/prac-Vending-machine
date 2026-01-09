@@ -21,10 +21,7 @@ class pro_manage():
     def product_change(self):
         number = int(input("교체 제품 번호 입력: "))
         new_product = input("새로운 제품 명을 입력: ")
-
-        for idx,product in enumerate(self.menu):
-            if idx+1 == number:
-                self.menu[idx] = {number:new_product}
+        self.menu[number] = new_product
         
 
     def show_menu(self):
