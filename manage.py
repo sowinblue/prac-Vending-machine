@@ -1,5 +1,7 @@
 
 
+
+
 class pro_manage():
     def __init__(self):
         self.menu = {}
@@ -21,8 +23,11 @@ class pro_manage():
     def product_change(self):
         number = int(input("교체 제품 번호 입력: "))
         new_product = input("새로운 제품 명을 입력: ")
-        self.menu[number] = new_product
-        
+        price = int(input("교체하는 제품의 가격 입력"))
+        self.menu[number] = {
+            "name": new_product,
+            "price": price
+        }
 
     #확인 전용
     def show_menu(self):
@@ -56,21 +61,23 @@ class pro_manage():
                 return item 
             elif confirm in valid_no: 
                 print("다시 선택해주세요.")
+            else:
+                print(f"Yes(Y) 또는 NO(N) 중에서만 선택해 주세요")
 
 
 
-    def money_slot(money):
+    def insert_money(self,money):
         coin_allowed = [100,500]
-        paper_allowed = [1000,5000,10000]
+        paper_allowed = [1000]
         total= 0
         
         for m in money:
             if m in coin_allowed or m in paper_allowed:
                 total = total + m
-            else:
-                print(f"{m}원은 사용할 수 없어")
 
-        return total
+        return total 
+
+
 
 
 
@@ -96,5 +103,5 @@ if __name__ == "__main__":
     print("\n===물건 고르기===")
     machine.pro_select()
 
-    print("\n===머니슬록===")
-    machine.money_slot()
+    print("\n===돈 총합===")
+    machine.insert_money()
