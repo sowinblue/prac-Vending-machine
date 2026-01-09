@@ -1,5 +1,7 @@
 
 
+
+
 class pro_manage():
     def __init__(self):
         self.menu = {}
@@ -65,13 +67,23 @@ class pro_manage():
 
 
     def insert_money(self,money):
-        coin_allowed = [100,500]
-        paper_allowed = [1000]
+        money_allowed = {100, 500, 1000}
         total= 0
         
         for m in money:
-            if m in coin_allowed or m in paper_allowed:
+            if m in money_allowed:
                 total = total + m
 
         return total 
 
+    def insert_card(self, card):
+        card_allowed = {"visa","master","kakako","naver"}
+
+        card = card.lower()
+
+        if card in card_allowed:
+            print(f"{card}결제가 승인 되었습니다.")
+            return True
+        else:
+            print("사용할 수 없는 카드 입니다.")
+            return False
