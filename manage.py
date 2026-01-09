@@ -73,16 +73,16 @@ class pro_manage():
         for m in money:
             if m in money_allowed:
                 total = total + m
-
         return total 
 
+
     def insert_card(self, card):
-        card_allowed = {"visa","master","kakako","naver"}
+        card_allowed = {"visa","master","kakao","naver"}
 
         card = card.lower()
 
         if card in card_allowed:
-            print(f"{card}결제가 승인 되었습니다.")
+            print(f"{card} 결제가 승인 되었습니다.")
             return True
         else:
             print("사용할 수 없는 카드 입니다.")
