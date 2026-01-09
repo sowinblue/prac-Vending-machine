@@ -21,11 +21,7 @@ class pro_manage():
     def product_change(self):
         number = int(input("교체 제품 번호 입력: "))
         new_product = input("새로운 제품 명을 입력: ")
-        new_price = int(input("가격 입력: "))
-        self.menu[number] = {
-            "name": new_product,
-            "price": new_price
-        }
+        self.menu[number] = new_product
         
 
     #확인 전용
@@ -40,11 +36,42 @@ class pro_manage():
 
     # 물건 고르기
     def pro_select(self):
-        number = int(input("구매하실 물건을 선택하세요"))
-        if number in self.menu:
-            item = self.menu[number] 
-            return item
-        print(item)
+        while True:
+            number = int(input("구매하실 물건의 번호를 입력: "))
+
+            if number not in self.menu:
+                print("존재하지 않는 번호입니다. 다시 선택하세요.")
+                continue    # while 처음으로 돌아감
+
+            item = self.menu[number]
+            print(f"선택하신 물품은 {item['name']}, 가격은 ({item['price']}원) 입니다.")
+
+            confirm = input("맞으면 Y, 정정하려면 N 입력: ").lower() # 사용자가 무엇을 입력하든 문자열을 전부 소문자로 변환해서 받음
+
+
+            valid_yes = {"y", "yes"} 
+            valid_no = {"n", "no"} 
+
+            if confirm in valid_yes: 
+                return item 
+            elif confirm in valid_no: 
+                print("다시 선택해주세요.")
+
+
+
+    def money_slot(money):
+        coin_allowed = [100,500]
+        paper_allowed = [1000,5000,10000]
+        total= 0
+        
+        for m in money:
+            if m in coin_allowed or m in paper_allowed:
+                total = total + m
+            else:
+                print(f"{m}원은 사용할 수 없어")
+
+        return total
+
 
 
 if __name__ == "__main__":
@@ -71,6 +98,3 @@ if __name__ == "__main__":
 
     print("\n===머니슬록===")
     machine.money_slot(money)
-
-
-    
