@@ -21,7 +21,11 @@ class pro_manage():
     def product_change(self):
         number = int(input("교체 제품 번호 입력: "))
         new_product = input("새로운 제품 명을 입력: ")
-        self.menu[number] = new_product
+        new_price = int(input("가격 입력: "))
+        self.menu[number] = {
+            "name": new_product,
+            "price": new_price
+        }
         
 
     #확인 전용
@@ -34,5 +38,31 @@ class pro_manage():
         return self.menu
 
 
-    def pro_select():
-        print
+    # 물건 고르기
+    def pro_select(self):
+        number = int(input("구매하실 물건을 선택하세요"))
+        if number in self.menu:
+            item = self.menu[number] 
+            return item
+        print(item)
+
+
+if __name__ == "__main__":
+    machine = pro_manage()
+
+    print("=== 자판기 채우기 ===")
+    machine.product_plus()
+
+    print("\n=== 현재 자판기 상태 ===")
+    machine.show_menu()
+
+    print("\n=== 상품 교체 ===")
+    machine.product_change()
+
+    print("\n=== 교체 후 상태 ===")
+    machine.show_menu()
+
+    print("\n=== 상품 선택 ===")
+    item = machine.pro_select()
+    print("선택된 상품:", item)
+
