@@ -1,19 +1,18 @@
-# 물건 채우기
+
 
 class pro_manage():
     def __init__(self):
-        self.menu = []
+        self.menu = {}
     
+    # 물건 채우기
     def product_plus(self):
         box = range(5)
         for i in box:
             product = input("제품 명을 입력: ")
 
-            product = { i+1:product}
-            self.menu.append(product)
+            self.menu[i+1] = product
         
         return self.menu
-
 
 
 
