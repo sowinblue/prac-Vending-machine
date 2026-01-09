@@ -64,7 +64,7 @@ class pro_manage():
 
 
 
-    def money_slot(money):
+    def insert_money(self,money):
         coin_allowed = [100,500]
         paper_allowed = [1000]
         total= 0
