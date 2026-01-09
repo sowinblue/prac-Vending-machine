@@ -94,7 +94,7 @@ if __name__ == "__main__":
     print("선택된 상품:", item)
 
     print("\n===물건 고르기===")
-    machine.pro_select(self)
+    machine.pro_select()
 
     print("\n===머니슬록===")
-    machine.money_slot(money)
+    machine.money_slot()
