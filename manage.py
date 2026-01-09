@@ -64,7 +64,9 @@ class pro_manage():
             # 선택 확인
             print(f"선택하신 물품은 {item['name']}, 가격은 ({item['price']}원) 입니다.")
 
+
             confirm = input("맞으면 Y, 정정하려면 N 입력: ").lower()
+            
             valid_yes = {"y", "yes"} 
             valid_no = {"n", "no"} 
 
