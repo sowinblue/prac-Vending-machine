@@ -34,5 +34,30 @@ class pro_manage():
         return self.menu
 
 
-    def pro_select():
-        print
+    # 물건 고르기
+    def pro_select(self):
+        while True:
+            number = int(input("구매하실 물건의 번호를 입력: "))
+
+            if number not in self.menu:
+                print("존재하지 않는 번호입니다. 다시 선택하세요.")
+                continue    # while 처음으로 돌아감
+
+            item = self.menu[number]
+            print(f"선택하신 물품은 {item['name']}, 가격은 ({item['price']}원) 입니다.")
+
+            confirm = input("맞으면 Y, 정정하려면 N 입력: ").lower() # 사용자가 무엇을 입력하든 문자열을 전부 소문자로 변환해서 받음
+
+
+            valid_yes = {"y", "yes"} 
+            valid_no = {"n", "no"} 
+
+            if confirm in valid_yes: 
+                return item 
+            elif confirm in valid_no: 
+                print("다시 선택해주세요.")
+
+
+
+    
+
