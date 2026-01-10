@@ -2,7 +2,7 @@
 
 
 
-class pro_manage():
+class ProManage():
     def __init__(self):
         self.menu = {}
     
