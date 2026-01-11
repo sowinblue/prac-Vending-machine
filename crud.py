@@ -24,13 +24,13 @@ class SuggestionBoard():
     def b_update(self):
         number = int(input("수정하고 싶은 건의 사항 번호"))
         new_comment = input("건의사항 수정 내용")
-        self.comments[number] = new_comment
+        self.comments[number-1] = new_comment
         return
     
 
     def b_delete(self):
         number = int(input("지우고 싶은 건의 사항 번호"))
-        del self.comments[number]
+        del self.comments[number-1]
     
 
     
