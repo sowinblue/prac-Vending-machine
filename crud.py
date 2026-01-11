@@ -23,14 +23,21 @@ class SuggestionBoard():
 
     def b_update(self):
         number = int(input("수정하고 싶은 건의 사항 번호"))
-        new_comment = input("건의사항 수정 내용")
-        self.comments[number-1] = new_comment
+        index = number - 1
+
+        if index < 0 or index >= len(self.comments):
+            print("존재하지 않는 건의 사항 입니다.")
         return
+
+        new_comment = input("건의사항 수정 내용")
+        self.comments[index] = new_comment
     
 
     def b_delete(self):
         number = int(input("지우고 싶은 건의 사항 번호"))
-        del self.comments[number-1]
+        index = number -1
+        del self.comments[index]
+        return
     
 
     
