@@ -27,17 +27,24 @@ class SuggestionBoard():
 
         if index < 0 or index >= len(self.comments):
             print("존재하지 않는 건의 사항 입니다.")
-        return
+            return
 
+    
         new_comment = input("건의사항 수정 내용")
         self.comments[index] = new_comment
+        print("수정 완료")
     
 
     def b_delete(self):
         number = int(input("지우고 싶은 건의 사항 번호"))
         index = number -1
+
+        if index < 0 or index >= len(self.comments):
+            print("존재하지 않는 건의 사항 입니다.")
+            return
+        
         del self.comments[index]
+        print("삭제 되었습니다.")
         return
-    
 
     
