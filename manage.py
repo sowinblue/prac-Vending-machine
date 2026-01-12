@@ -1,7 +1,6 @@
 
 
 
-
 class ProManage():
     def __init__(self):
         self.menu = {}
